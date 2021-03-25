@@ -4,5 +4,7 @@
     <string name="placeholder_quiz_question">Question</string>
     <string name="placeholder_answer">Answer</string>
     <string name="NextButton">Next</string>
-
+    <string name="Lesson">Lesson</string>
+    <string name="SpeechBubble">Bubble</string>
+    <string name="todo">TODO</string>
 </resources>
