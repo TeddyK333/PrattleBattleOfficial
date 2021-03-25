@@ -35,7 +35,6 @@ public class QuizActivity extends AppCompatActivity {
                 findViewById(R.id.radio_button_quiz_answer_1),
                 findViewById(R.id.radio_button_quiz_answer_2),
                 findViewById(R.id.radio_button_quiz_answer_3),
-                findViewById(R.id.radio_button_quiz_answer_4)
         };
 
         // Setting code
@@ -60,7 +59,6 @@ public class QuizActivity extends AppCompatActivity {
                         new Answer(1, " I communicate in a straightforward manner - I talk directly with a person when I have a problem with them", 2),
                         new Answer(2, " I communicate in an indirect manner - I keep it to myself when I have a problem with a person ", 1),
                         new Answer(3, " I don’t talk to the person I have a problem with and instead talk about them behind their backs",  0),
-                        new Answer(4, " I communicate in a straightforward manner - I talk directly with a person when I have a problem with them fghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", 2),
 
                 }
         ));
@@ -123,7 +121,7 @@ public class QuizActivity extends AppCompatActivity {
                         new Answer(1, " I have a very expressive face - I wear my emotions on my sleeve", 1),
                         new Answer(2, " My facial expression never gives away what I am thinking or feeling ", 0),
                         new Answer(3, " I use some body language but I am sloppy with it - for example I have no idea what to do with my hands", 1),
-                        new Answer(3, " I show my emotions in proportional amounts", 2),
+                        new Answer(4, " I show my emotions in proportional amounts", 2),
 
                 }
         ));
@@ -132,7 +130,7 @@ public class QuizActivity extends AppCompatActivity {
                         new Answer(1, " I go into lengthy explanations", 1),
                         new Answer(2, " I get my point across briefly ", 1),
                         new Answer(3, " I never try to explain anything", 0),
-                        new Answer(3, " I can both speak at length and in short depending on the situation", 2),
+                        new Answer(4, " I can both speak at length and in short depending on the situation", 2),
 
                 }
         ));
@@ -141,7 +139,6 @@ public class QuizActivity extends AppCompatActivity {
                         new Answer(1, " People often misunderstand what I say", 1),
                         new Answer(2, " I have a hard time saying what I mean ", 0),
                         new Answer(3, " I don’t have problems with getting my ideas across", 2),
-                        new Answer(3, " I don’t have problems with getting my ideas across", 1),
 
                 }
         ));

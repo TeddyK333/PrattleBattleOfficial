@@ -34,7 +34,9 @@
             android:id="@+id/RadioGroup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:ignore="MissingConstraints">
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
             <RadioButton
                 android:id="@+id/radio_button_quiz_answer_1"
@@ -95,9 +97,9 @@
             android:id="@+id/Next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/NextButton"
             android:layout_marginTop="20dp"
-            app:backgroundTint="#F44336"
+            android:text="@string/NextButton"
+            app:backgroundTint="@color/main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
