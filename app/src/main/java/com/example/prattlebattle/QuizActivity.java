@@ -13,39 +13,49 @@ import java.util.ArrayList;
 public class QuizActivity extends AppCompatActivity {
 
     private ArrayList<Question> quizQuestions = new ArrayList<>();
+    private int currentQuestion = 0;
+    private TextView question;
+    private TextView[] answerViews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        init();
-    }
-
-    private void init() {
-        populateQuestions();
-        iterateQuestions();
-    }
-
-    private void iterateQuestions() {
-        int q = 0;
-
-        TextView question = findViewById(R.id.text_view_quiz_question_title);
-        TextView[] answerViews = {
+        question = findViewById(R.id.text_view_quiz_question_title);
+        answerViews = new TextView[]{
                 findViewById(R.id.radio_button_quiz_answer_1),
                 findViewById(R.id.radio_button_quiz_answer_2),
                 findViewById(R.id.radio_button_quiz_answer_3),
         };
 
-        // Setting code
-        question.setText(quizQuestions.get(q).text);
-        for (int i = 0; i < quizQuestions.get(q).answers.length; ++i) {
-            answerViews[i].setText(quizQuestions.get(q).answers[i].text);
-        }
+        init();
+    }
 
-        // TODO: Listen for Next button Click
-            // Record users answer
-            // Use same code (setting code) to replace text with next answer
+    private void init() {
+        populateQuestions();
+        createListener();
+        setQuestion();
+    }
+
+    private void createListener() {
+        Button nextQustionButton = (Button) findViewById(R.id.button_quiz_next);
+        nextQustionButton.setOnClickListener(view -> {
+            // TODO: check if there is next question, else ...
+            ++currentQuestion;
+            // TODO: save answer
+            // TODO: clear radioButton
+            setQuestion();
+
+        });
+    }
+
+    private void setQuestion() {
+        question.setText(quizQuestions.get(currentQuestion).text);
+        for (int i = 0; i < quizQuestions.get(currentQuestion).answers.length; ++i) {
+            answerViews[i].setText(quizQuestions.get(currentQuestion).answers[i].text);
+            // TODO: check if all layout answers are used, if not hide
+        }
     }
 
     private int calculateQuizScore() {
