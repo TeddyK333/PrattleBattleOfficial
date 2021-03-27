@@ -12,10 +12,11 @@ import java.util.ArrayList;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private ArrayList<Question> quizQuestions = new ArrayList<>();
+    private ArrayList <Question> quizQuestions = new ArrayList<>();
     private int currentQuestion = 0;
     private TextView question;
     private TextView[] answerViews;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class QuizActivity extends AppCompatActivity {
                 findViewById(R.id.radio_button_quiz_answer_1),
                 findViewById(R.id.radio_button_quiz_answer_2),
                 findViewById(R.id.radio_button_quiz_answer_3),
+                findViewById(R.id.radio_button_quiz_answer_4),
         };
 
         init();
@@ -39,8 +41,8 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void createListener() {
-        Button nextQustionButton = (Button) findViewById(R.id.button_quiz_next);
-        nextQustionButton.setOnClickListener(view -> {
+        Button nextQuestionButton = (Button) findViewById(R.id.button_quiz_next);
+        nextQuestionButton.setOnClickListener(view -> {
             // TODO: check if there is next question, else ...
             ++currentQuestion;
             // TODO: save answer
@@ -55,6 +57,9 @@ public class QuizActivity extends AppCompatActivity {
         for (int i = 0; i < quizQuestions.get(currentQuestion).answers.length; ++i) {
             answerViews[i].setText(quizQuestions.get(currentQuestion).answers[i].text);
             // TODO: check if all layout answers are used, if not hide
+            //if
+            //FourthRadioButtonAnswer.setVisibility(View.VISIBLE)
+            //Button FourthRadioButtonAnswer =  findViewById(R.id.radio_button_quiz_answer_4);
         }
     }
 
@@ -62,6 +67,7 @@ public class QuizActivity extends AppCompatActivity {
         // TODO: implement
         return 0;
     }
+
 
     private void populateQuestions() {
         quizQuestions.add(new Question(1, "Which one sounds more like you?",
@@ -73,7 +79,7 @@ public class QuizActivity extends AppCompatActivity {
                 }
         ));
 
-        quizQuestions.add(new Question(2, "TODO",
+        quizQuestions.add(new Question(2, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " I try to get my point across in the most straightforward and simple manner", 2),
                         new Answer(2, " I over complicate things ", 1),
@@ -82,7 +88,7 @@ public class QuizActivity extends AppCompatActivity {
                 }
         ));
 
-        quizQuestions.add(new Question(3, "TODO",
+        quizQuestions.add(new Question(3, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " People often misunderstand what I say", 0),
                         new Answer(2, " I have a hard time saying what I mean ", 1),
@@ -91,7 +97,7 @@ public class QuizActivity extends AppCompatActivity {
                 }
         ));
 
-        quizQuestions.add(new Question(4, "TODO",
+        quizQuestions.add(new Question(4, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " When I don’t understand what the other person is saying I don’t have a hard time asking for an explanation", 2),
                         new Answer(2, " When I don’t understand what the other person is saying I don’t ask for an explanation ", 1),
@@ -99,8 +105,8 @@ public class QuizActivity extends AppCompatActivity {
                         new Answer(4, " When I don’t understand what the other person is saying I assume what they mean without consulting with them", 0),
 
                 }
-        ));
-        quizQuestions.add(new Question(5, "TODO",
+        ))
+;        quizQuestions.add(new Question(5, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " I can understand when other people have misunderstood what I have said", 2),
                         new Answer(2, " I struggle to figure out when others have misunderstood my speech ", 1),
@@ -108,7 +114,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 }
         ));
-        quizQuestions.add(new Question(6, "TODO",
+        quizQuestions.add(new Question(6, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " I try to understand other people’s point of view", 2),
                         new Answer(2, " I fail to see it from other’s point of view ", 1),
@@ -117,7 +123,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 }
         ));
-        quizQuestions.add(new Question(7, "TODO",
+        quizQuestions.add(new Question(7, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " I am very worried I will say something stupid so I prefer to remain silent rather than hurting people with my ignorance", 1),
                         new Answer(2, " I know that it’s only normal to make mistakes when you’re thinking on the spot so i don’t beat myself over it but I also consider how my words may affect others", 2),
@@ -126,7 +132,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 }
         ));
-        quizQuestions.add(new Question(8, "TODO",
+        quizQuestions.add(new Question(8, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " I have a very expressive face - I wear my emotions on my sleeve", 1),
                         new Answer(2, " My facial expression never gives away what I am thinking or feeling ", 0),
@@ -135,7 +141,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 }
         ));
-        quizQuestions.add(new Question(9, "TODO",
+        quizQuestions.add(new Question(9, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " I go into lengthy explanations", 1),
                         new Answer(2, " I get my point across briefly ", 1),
@@ -144,7 +150,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 }
         ));
-        quizQuestions.add(new Question(10, "TODO",
+        quizQuestions.add(new Question(10, "Which one sounds more like you?",
                 new Answer[]{
                         new Answer(1, " People often misunderstand what I say", 1),
                         new Answer(2, " I have a hard time saying what I mean ", 0),
