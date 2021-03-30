@@ -7,4 +7,13 @@
     <string name="Lesson">Lesson</string>
     <string name="SpeechBubble">Bubble</string>
     <string name="todo">TODO</string>
+
+
+<!--    Shared Preferences Keys-->
+    <string name="user_name_key">userName</string>
+    <string name="user_age_key">userAge</string>
+    <string name="user_email_key">userEmail</string>
+
+    <string name="completed_registration_key">finishedIntro</string>
+
 </resources>

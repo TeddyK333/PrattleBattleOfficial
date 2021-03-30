@@ -1,4 +1,4 @@
-package com.example.prattlebattle;
+package com.example.prattlebattle.model;
 
 public class Question{
     int number;
