@@ -65,6 +65,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private int calculateQuizScore() {
         // TODO: implement
+
         return 0;
     }
 
