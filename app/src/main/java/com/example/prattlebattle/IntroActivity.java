@@ -25,7 +25,8 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     private void gotToRegistration() {
-        Intent intent = new Intent(this, RegistrationActivity.class);
+        // TODO: go through Registration first
+        Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
     }
 }

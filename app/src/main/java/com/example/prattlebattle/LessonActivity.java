@@ -13,6 +13,8 @@ import com.example.prattlebattle.model.Question;
 
 import java.util.ArrayList;
 
+    // TODO: add voiceover replay function
+    // TODO: stop gif when audio is over
     public class LessonActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {

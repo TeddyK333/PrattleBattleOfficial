@@ -4,6 +4,7 @@
     <string name="placeholder_quiz_question">Question</string>
     <string name="placeholder_answer">Answer</string>
     <string name="NextButton">Next</string>
+    <string name="CompleteQuizButton">Finish</string>
     <string name="LessonName">LessonName</string>
     <string name="todo">TODO</string>
     <string name="LessonScript">LessonScript</string>
