@@ -2,12 +2,17 @@ package com.example.prattlebattle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.prattlebattle.model.Answer;
 import com.example.prattlebattle.model.Question;
 
@@ -23,6 +28,8 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton[] answerViews;
     private Button nextQuestionButton;
     private RadioGroup radioGroupAnswers;
+    SharedPreferences quizScore;
+
 
 
     @Override
@@ -54,11 +61,25 @@ public class QuizActivity extends AppCompatActivity {
             totalScore += quizQuestions.get(currentQuestion).answers[id].score;
             radioGroupAnswers.clearCheck();
 
+
+
             if (currentQuestion == quizQuestions.size()-1) {
                 // TODO: complete quiz, save results, go to main activity
+
+
+                quizScore = getSharedPreferences("quizScore", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = quizScore.edit();
+                //??
+                editor.putInt("score", totalScore);
+                editor.apply();
+                ++currentQuestion;
             } else {
                 ++currentQuestion;
                 setQuestion();
+            }
+            if (currentQuestion == quizQuestions.size()) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -78,11 +99,7 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-    private int calculateQuizScore() {
-        // TODO: implement
 
-        return 0;
-    }
 
 
     private void populateQuestions() {
