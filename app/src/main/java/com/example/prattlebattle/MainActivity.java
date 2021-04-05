@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isFirstTimeUser() {
-        SharedPreferences sharedPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
         return !sharedPref.getBoolean(getString(R.string.completed_registration_key), false);
     }
 }

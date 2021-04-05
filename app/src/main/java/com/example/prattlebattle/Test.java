@@ -20,11 +20,11 @@ public class Test extends AppCompatActivity {
         t3 = findViewById(R.id.textView4);
         t4 = findViewById(R.id.textView5);
 
-        SharedPreferences registration = getApplicationContext().getSharedPreferences("registration", Context.MODE_PRIVATE);
-        String name = registration.getString("name", "");
-        String email = registration.getString("email","");
-        String age = registration.getString("age","");
-        String password = registration.getString("password","");
+        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
+        String name = sharedPref.getString("name", "");
+        String email = sharedPref.getString("email","");
+        String age = sharedPref.getString("age","");
+        String password = sharedPref.getString("password","");
 
         t1.setText(name);
         t2.setText(email);

@@ -28,9 +28,6 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton[] answerViews;
     private Button nextQuestionButton;
     private RadioGroup radioGroupAnswers;
-    SharedPreferences quizScore;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,25 +58,17 @@ public class QuizActivity extends AppCompatActivity {
             totalScore += quizQuestions.get(currentQuestion).answers[id].score;
             radioGroupAnswers.clearCheck();
 
-
-
             if (currentQuestion == quizQuestions.size()-1) {
-                // TODO: complete quiz, save results, go to main activity
-
-
-                quizScore = getSharedPreferences("quizScore", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = quizScore.edit();
-                //??
+                SharedPreferences sharedPreferences = getSharedPreferences("main", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt("score", totalScore);
                 editor.apply();
-                ++currentQuestion;
+
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
             } else {
                 ++currentQuestion;
                 setQuestion();
-            }
-            if (currentQuestion == quizQuestions.size()) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
             }
         });
     }
@@ -98,9 +87,6 @@ public class QuizActivity extends AppCompatActivity {
             nextQuestionButton.setText(getResources().getString(R.string.CompleteQuizButton));
         }
     }
-
-
-
 
     private void populateQuestions() {
         quizQuestions.add(new Question(0, "Which one sounds more like you?",

@@ -31,18 +31,13 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-
         // TODO: validate inputs
-        // TODO: save data to shared preferences
-        // TODO: move to main activity
 
         name = findViewById(R.id.editTextName);
         age = findViewById(R.id.editTextAge);
         password = findViewById(R.id.editTextPassword);
         email = findViewById(R.id.editTextEmail);
         registerButton = findViewById(R.id.buttonRegister);
-
-        registration = getSharedPreferences("registration", Context.MODE_PRIVATE);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,16 +46,19 @@ public class RegistrationActivity extends AppCompatActivity {
                 emailStr = email.getText().toString();
                 ageStr = age.getText().toString();
                 passStr = password.getText().toString();
-                SharedPreferences.Editor editor = registration.edit();
 
-                editor.putString("name",nameStr);
+
+                SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+
+                editor.putString("name", nameStr);
                 editor.putString("email", emailStr);
                 editor.putString("age", ageStr);
-                editor.putString("password", passStr);
-                editor.commit();
-                Intent intent = new Intent(RegistrationActivity.this, Test.class);
-                startActivity(intent);
+                editor.putBoolean(getString(R.string.completed_registration_key), true);
+                editor.apply();
 
+                Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
