@@ -19,4 +19,21 @@
 
     <string name="completed_registration_key">finishedIntro</string>
 
+
+    <!--    mainActivity-->
+    <string name="prattlebattle">PrattleBattle</string>
+    <string name="coddesses">Coddesses</string>
+    <string name="subscribe_now"><![CDATA[Subscribe now >]]></string>
+    <string name="theory">Theory</string>
+    <string name="practice">Practice</string>
+    <string name="rehearse_to_converse"><![CDATA[Rehearse to converse >]]></string>
+    <string name="start_reading_amp_listening"><![CDATA[Start reading & listening >]]></string>
+
+
+
+<!--   Lesson-->
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+
 </resources>

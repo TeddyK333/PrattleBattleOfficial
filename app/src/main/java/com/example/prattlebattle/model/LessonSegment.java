@@ -5,11 +5,11 @@ public class LessonSegment {
     public String text;
     public String audioLink;
 
-//    public LessonSegment (int number, ArrayList<String> lessonScripts)
-//    {
-//        this.number = number;
-//        this.lessonScripts = lessonScripts;
-//    }
+    public LessonSegment(int number, String text, String audioLink) {
+        this.number = number;
+        this.text = text;
+        this.audioLink = audioLink;
+    }
 }
 
 

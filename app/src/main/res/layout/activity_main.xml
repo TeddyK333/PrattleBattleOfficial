@@ -7,82 +7,113 @@
     android:backgroundTint="@android:color/holo_orange_dark"
     android:foregroundTint="@android:color/holo_orange_dark">
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="181dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:fontFamily="casual"-->
-<!--        android:text="PrattleBattle"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textStyle="bold"-->
-<!--        tools:layout_editor_absoluteX="115dp"-->
-<!--        tools:layout_editor_absoluteY="33dp" />-->
+    <TextView
+        android:id="@+id/textViewTittle"
+        android:layout_width="181dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="33dp"
+        android:fontFamily="casual"
+        android:text="@string/prattlebattle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView3"-->
-<!--        android:layout_width="91dp"-->
-<!--        android:layout_height="31dp"-->
-<!--        android:fontFamily="casual"-->
-<!--        android:text="Coddesses"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textStyle="bold"-->
-<!--        tools:layout_editor_absoluteX="160dp"-->
-<!--        tools:layout_editor_absoluteY="88dp" />-->
+    <TextView
+        android:id="@+id/textViewCreators"
+        android:layout_width="91dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="casual"
+        android:text="@string/coddesses"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTittle" />
 
-<!--    <Button-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="355dp"-->
-<!--        android:layout_height="67dp"-->
-<!--        android:backgroundTint="@android:color/holo_orange_dark"-->
-<!--        android:fontFamily="sans-serif"-->
-<!--        android:shape="oval"-->
-<!--        android:text="Subscribe now >"-->
-<!--        android:textSize="18sp"-->
-<!--        tools:layout_editor_absoluteX="28dp"-->
-<!--        tools:layout_editor_absoluteY="152dp" />-->
+    <Button
+        android:id="@+id/buttonSubscribe"
+        android:layout_width="355dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="33dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:fontFamily="sans-serif"
+        android:shape="oval"
+        android:text="@string/subscribe_now"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCreators" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView4"-->
-<!--        android:layout_width="79dp"-->
-<!--        android:layout_height="36dp"-->
-<!--        android:text="Theory"-->
-<!--        android:textSize="24sp"-->
-<!--        tools:layout_editor_absoluteX="28dp"-->
-<!--        tools:layout_editor_absoluteY="256dp" />-->
+    <TextView
+        android:id="@+id/textViewTheory"
+        android:layout_width="79dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/theory"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSubscribe" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView5"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Practice"-->
-<!--        android:textSize="24sp"-->
-<!--        tools:layout_editor_absoluteX="28dp"-->
-<!--        tools:layout_editor_absoluteY="414dp" />-->
+    <TextView
+        android:id="@+id/textViewPractice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/practice"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToLessons" />
 
-<!--    <Button-->
-<!--        android:id="@+id/button4"-->
-<!--        android:layout_width="355dp"-->
-<!--        android:layout_height="85dp"-->
-<!--        android:backgroundTint="@color/blue"-->
-<!--        android:text="Rehearse to converse >"-->
-<!--        android:textSize="16sp"-->
-<!--        tools:layout_editor_absoluteX="28dp"-->
-<!--        tools:layout_editor_absoluteY="453dp" />-->
+    <Button
+        android:id="@+id/buttonToPractice"
+        android:layout_width="355dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="7dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/rehearse_to_converse"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPractice" />
 
-<!--    <Button-->
-<!--        android:id="@+id/button5"-->
-<!--        android:layout_width="355dp"-->
-<!--        android:layout_height="85dp"-->
-<!--        android:backgroundTint="@color/teal_200"-->
-<!--        android:text="Start reading&listening >"-->
-<!--        android:textSize="16sp"-->
-<!--        tools:layout_editor_absoluteX="28dp"-->
-<!--        tools:layout_editor_absoluteY="292dp" />-->
+    <Button
+        android:id="@+id/buttonToLessons"
+        android:layout_width="355dp"
+        android:layout_height="85dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/start_reading_amp_listening"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTheory" />
 
 <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
 <!--        android:layout_width="415dp"-->
 <!--        android:layout_height="93dp"-->
-<!--        tools:layout_editor_absoluteX="-2dp"-->
-<!--        tools:layout_editor_absoluteY="622dp" />-->
+<!--        android:layout_marginTop="99dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/buttonToPractice" />-->
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifCharacterImageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/character"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonToPractice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

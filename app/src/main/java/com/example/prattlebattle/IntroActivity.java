@@ -1,6 +1,7 @@
 package com.example.prattlebattle;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.VideoView;
@@ -22,6 +23,14 @@ public class IntroActivity extends AppCompatActivity {
         videoView.start();
 
         videoView.setOnCompletionListener(mp -> gotToRegistration());
+
+        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(getString(R.string.completed_registration_key), true);
+        editor.apply();
+
+
+
     }
 
     private void gotToRegistration() {

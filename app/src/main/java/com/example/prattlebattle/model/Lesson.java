@@ -14,12 +14,15 @@ public class Lesson {
     public String lessonName;
     public LessonSegment[] segments;
 
-//    public Lesson (int number, ArrayList<String> lessonScripts)
-//    {
-//        this.number = number;
-//        this.lessonScripts = lessonScripts;
-//
-//    }
+    public Lesson(int number, String lessonName, LessonSegment[] segments) {
+        this.number = number;
+        this.lessonName = lessonName;
+        this.segments = segments;
+
+    }
 }
+
+
+
 
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,17 +18,39 @@ public class MainActivity extends AppCompatActivity {
         init();
 
 
+        Button Subscribe = (Button) findViewById(R.id.buttonSubscribe);
+        Button Lessons = (Button) findViewById(R.id.buttonToLessons);
+        Button Practice = (Button) findViewById(R.id.buttonToPractice);
+
+        Lessons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
-//        Intent intent = new Intent(this, QuizActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.editText);
+                Intent intent = new Intent(MainActivity.this, LessonActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Practice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent intent = new Intent(MainActivity.this, PracticeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 //        String message = editText.getText().toString();
 //        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
+
+
     }
 
     private void init() {
-        if (isFirstTimeUser()){
+        if (isFirstTimeUser()) {
             Intent intent = new Intent(this, IntroActivity.class);
             startActivity(intent);
         }
