@@ -11,13 +11,17 @@
     <string name="LessonScript">LessonScript</string>
 
 
+    <string name="invalidAge">Some words of things.</string>
+
+
+
     <!--    Shared Preferences Keys-->
     <string name="user_name_key">Enter your name</string>
     <string name="user_age_key">Enter your age</string>
     <string name="user_email_key">Enter your email</string>
     <string name="user_password_key">Enter a password</string>
 
-    <string name="completed_registration_key">finishedIntro</string>
+    <string name="completed_registration_key">completedRegistration</string>
 
 
     <!--    mainActivity-->

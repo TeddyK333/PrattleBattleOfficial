@@ -11,10 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/main"
         android:text="@string/NextButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gifCharacterImageView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/TextViewLessonTitle"
@@ -36,23 +37,20 @@
         android:id="@+id/gifCharacterImageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/character"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewLesson" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/TextViewLesson"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="500dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
         android:text="@string/LessonScript"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewLessonTitle" />
@@ -65,7 +63,6 @@
         android:layout_marginBottom="25dp"
         android:backgroundTint="#FF5722"
         android:text="@string/play"
-        android:onClick="play"
         app:iconTint="#FF5722"
         app:layout_constraintBottom_toTopOf="@+id/buttonPause"
         app:layout_constraintStart_toStartOf="parent" />
@@ -78,7 +75,6 @@
         android:layout_marginBottom="25dp"
         android:backgroundTint="#FF5722"
         android:text="@string/pause"
-        android:onClick="pause"
         app:iconTint="#FF5722"
         app:layout_constraintBottom_toTopOf="@+id/buttonStop"
         app:layout_constraintStart_toStartOf="parent" />
@@ -91,7 +87,6 @@
         android:layout_marginBottom="97dp"
         android:backgroundTint="#FF5722"
         android:text="@string/stop"
-        android:onClick="stop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

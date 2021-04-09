@@ -1,59 +1,52 @@
 package com.example.prattlebattle;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.view.View;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.prattlebattle.model.AgeLimit;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    EditText name, email, age, password;
-    Button registerButton;
-    SharedPreferences registration;
-    String nameStr, emailStr, ageStr, passStr;
+    private static final int AGE_MIN = 5;
+    private static final int AGE_MAX = 100;
 
+    private Button registerButton;
+    private String name, email, pass;
+    private int age = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        // TODO: validate inputs
-
-        name = findViewById(R.id.editTextName);
-        age = findViewById(R.id.editTextAge);
-        password = findViewById(R.id.editTextPassword);
-        email = findViewById(R.id.editTextEmail);
+        EditText nameEditText = findViewById(R.id.editTextName);
+        EditText ageEditText = findViewById(R.id.editTextAge);
+        EditText passwordEditText = findViewById(R.id.editTextPassword);
+        EditText emailEditText = findViewById(R.id.editTextEmail);
         registerButton = findViewById(R.id.buttonRegister);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nameStr = name.getText().toString();
-                emailStr = email.getText().toString();
-                ageStr = age.getText().toString();
-                passStr = password.getText().toString();
+        registerButton.setOnClickListener(view -> {
+            name = nameEditText.getText().toString();
+            email = emailEditText.getText().toString();
+            age = ageEditText.getText().toString().length() > 0 ? Integer.parseInt(ageEditText.getText().toString()) : 0;
+            pass = passwordEditText.getText().toString();
 
-
+            if (isInputValid()) {
                 SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
 
-                editor.putString("name", nameStr);
-                editor.putString("email", emailStr);
-                editor.putString("age", ageStr);
+                // TODO: use string resources for sharPref keys
+                editor.putString("name", name);
+                editor.putString("email", email);
+                editor.putInt("age", age);
+                editor.putString("pass", pass); //TODO: Hash password before save (Next Iteration)
                 editor.putBoolean(getString(R.string.completed_registration_key), true);
                 editor.apply();
 
@@ -61,17 +54,30 @@ public class RegistrationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    private boolean isInputValid() {
+        return allFieldsAreFilled() && isAgeValid() && isEmailValid();
+    }
 
+    private boolean allFieldsAreFilled() {
+        // TODO implement;
+        return true;
+    }
 
+    private boolean isAgeValid() {
+        if (age >= AGE_MIN && age <= AGE_MAX) {
+            return true;
+        }
+        Toast.makeText(this, R.string.invalidAge, Toast.LENGTH_SHORT).show();
+        return false;
+    }
 
-
-
-
-
-
-
-
-
+    private boolean isEmailValid() {
+        if (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return true;
+        }
+        Toast.makeText(this, R.string.invalidAge, Toast.LENGTH_SHORT).show();
+        return false;
     }
 }

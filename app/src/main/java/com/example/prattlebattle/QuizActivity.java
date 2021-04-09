@@ -54,21 +54,23 @@ public class QuizActivity extends AppCompatActivity {
 
     private void createListener() {
         nextQuestionButton.setOnClickListener(view -> {
-            int id = radioGroupAnswers.indexOfChild(radioGroupAnswers.findViewById(radioGroupAnswers.getCheckedRadioButtonId()));
-            totalScore += quizQuestions.get(currentQuestion).answers[id].score;
-            radioGroupAnswers.clearCheck();
+            if (radioGroupAnswers.getCheckedRadioButtonId() != -1) {
+                int id = radioGroupAnswers.indexOfChild(radioGroupAnswers.findViewById(radioGroupAnswers.getCheckedRadioButtonId()));
+                totalScore += quizQuestions.get(currentQuestion).answers[id].score;
+                radioGroupAnswers.clearCheck();
 
-            if (currentQuestion == quizQuestions.size()-1) {
-                SharedPreferences sharedPreferences = getSharedPreferences("main", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("score", totalScore);
-                editor.apply();
+                if (currentQuestion == quizQuestions.size() - 1) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("main", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("score", totalScore);
+                    editor.apply();
 
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-            } else {
-                ++currentQuestion;
-                setQuestion();
+                    Intent intent = new Intent(this, RegistrationActivity.class);
+                    startActivity(intent);
+                } else {
+                    ++currentQuestion;
+                    setQuestion();
+                }
             }
         });
     }
