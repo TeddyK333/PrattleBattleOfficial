@@ -2,9 +2,7 @@ package com.example.prattlebattle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -13,15 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.prattlebattle.data.Lessons;
-import com.example.prattlebattle.model.Answer;
-import com.example.prattlebattle.model.Lesson;
-import com.example.prattlebattle.model.LessonSegment;
-import com.example.prattlebattle.model.Question;
-
-import java.util.ArrayList;
 
 import static com.example.prattlebattle.data.Lessons.lessons;
 
@@ -48,6 +37,7 @@ public class LessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lesson);
 
         // TODO: get from intent the current lesson and segment
+        // homeandlearn.co.uk/android/intent_put_extra.html
 
         nextButton = (Button) findViewById(R.id.buttonNext);
         playButton = (Button) findViewById(R.id.buttonPlay);
@@ -75,7 +65,7 @@ public class LessonActivity extends AppCompatActivity {
         otherLessonsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LessonActivity.this, All_Lessons.class);
+                Intent intent = new Intent(LessonActivity.this, LessonsMenuActivity.class);
                 startActivity(intent);
             }
         });
@@ -114,6 +104,13 @@ public class LessonActivity extends AppCompatActivity {
 
     private void next() {
         // TODO: check for next lesson/segment
+
+        // Check if last Segment
+        if (lessons[currentLesson].segments.length - 1 == currentSegment) {
+
+        }
+
+
 //        for ( i = 0; i < lessons.length; i++) {
 //        if (currentSegment == lessons.lesson1.Lesson[currentLesson].segments.length()-1)
 //        {

@@ -13,6 +13,7 @@ public class Lesson {
     public int number;
     public String lessonName;
     public LessonSegment[] segments;
+    public boolean isCompleted;
 
     public Lesson(int number, String lessonName, LessonSegment[] segments) {
         this.number = number;

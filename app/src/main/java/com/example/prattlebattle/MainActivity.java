@@ -3,7 +3,6 @@ package com.example.prattlebattle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                Intent intent = new Intent(MainActivity.this, All_Lessons.class);
+                Intent intent = new Intent(MainActivity.this, LessonsMenuActivity.class);
                 startActivity(intent);
             }
         });
@@ -60,14 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         if (isFirstTimeUser()) {
-            Intent intent = new Intent(this, IntroActivity.class);
+            Intent intent = new Intent(this, RegistrationActivity.class);
             startActivity(intent);
         }
     }
 
     private boolean isFirstTimeUser() {
-        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
-        return !sharedPref.getBoolean(getString(R.string.completed_registration_key), false);
+//        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
+//        return !sharedPref.getBoolean(getString(R.string.completed_registration_key), false);
+        return true;
     }
 }
 

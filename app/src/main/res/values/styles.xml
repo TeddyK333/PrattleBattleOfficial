@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LessonButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/black</item>
+        <item name="app:backgroundTint">#455454</item>
+    </style>
+</resources>

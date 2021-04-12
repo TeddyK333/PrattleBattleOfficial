@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class All_Lessons extends AppCompatActivity {
+public class LessonsMenuActivity extends AppCompatActivity {
 
     private Button less1, less2, less3, less4, less5, less6, less7, less8, less9, less10, less11, less12, less13;
 
@@ -16,7 +16,7 @@ public class All_Lessons extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all__lessons);
+        setContentView(R.layout.activity_lessons_menu);
 
 
         less1 = findViewById(R.id.LessonNumber1);
@@ -27,7 +27,7 @@ public class All_Lessons extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                Intent intent = new Intent(All_Lessons.this, LessonActivity.class);
+                Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
                 startActivity(intent);
             }
         });

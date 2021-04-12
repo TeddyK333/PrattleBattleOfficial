@@ -67,12 +67,8 @@ public class RegistrationActivity extends AppCompatActivity {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             return false;
         }
-            return true;
-            // TODO check if age field is filled
-        }
-
-
-
+        return true;
+    }
 
     private boolean isAgeValid() {
         if (age >= AGE_MIN && age <= AGE_MAX) {
