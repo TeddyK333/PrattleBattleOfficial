@@ -11,8 +11,7 @@
     <string name="LessonScript">LessonScript</string>
 
 
-    <string name="invalidAge">Some words of things.</string>
-
+    <string name="invalidAge">Invalid input!</string>
 
 
     <!--    Shared Preferences Keys-->
@@ -34,10 +33,14 @@
     <string name="start_reading_amp_listening"><![CDATA[Start reading & listening >]]></string>
 
 
-
-<!--   Lesson-->
+    <!--   Lesson-->
     <string name="play">Play</string>
     <string name="pause">Pause</string>
     <string name="stop">Stop</string>
+    <string name="main">Main</string>
+
+<!--    All lessons-->
+    <string name="lessonButton"></string>
+
 
 </resources>

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                Intent intent = new Intent(MainActivity.this, LessonActivity.class);
+                Intent intent = new Intent(MainActivity.this, All_Lessons.class);
                 startActivity(intent);
             }
         });
@@ -36,15 +37,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MainActivity.this, PracticeActivity.class);
+//                startActivity(intent);
+            }
+        });
 
-                Intent intent = new Intent(MainActivity.this, PracticeActivity.class);
-                startActivity(intent);
+        Subscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
             }
         });
 
 
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
+
 
 
     }

@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +23,9 @@ import com.example.prattlebattle.model.Question;
 
 import java.util.ArrayList;
 
-// TODO: add voiceover replay function
-// TODO: stop gif when audio is over
+import static com.example.prattlebattle.data.Lessons.lessons;
+
+
 public class LessonActivity extends AppCompatActivity {
 
     private int currentLesson = 0;
@@ -33,6 +37,9 @@ public class LessonActivity extends AppCompatActivity {
     private Button stopButton;
     private TextView lessonTitle;
     private TextView lessonScript;
+    private ImageView character;
+    private Button mainButton;
+    private Button otherLessonsButton;
 
 
     @Override
@@ -40,7 +47,7 @@ public class LessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-        // TODO: get form intent the current lesson and segment
+        // TODO: get from intent the current lesson and segment
 
         nextButton = (Button) findViewById(R.id.buttonNext);
         playButton = (Button) findViewById(R.id.buttonPlay);
@@ -48,8 +55,31 @@ public class LessonActivity extends AppCompatActivity {
         stopButton = (Button) findViewById(R.id.buttonStop);
         lessonTitle = findViewById(R.id.TextViewLessonTitle);
         lessonScript = findViewById(R.id.TextViewLesson);
+        character = findViewById(R.id.gifCharacterImageView);
+        mainButton = findViewById(R.id.buttonMain);
+        otherLessonsButton = findViewById(R.id.otherLessonsButton);
+
+
+
+
 
         init();
+
+        mainButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LessonActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        otherLessonsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LessonActivity.this, All_Lessons.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -64,13 +94,15 @@ public class LessonActivity extends AppCompatActivity {
     }
 
     private void setLesson() {
-        lessonTitle.setText(Lessons.lessons[currentLesson].lessonName);
+        lessonTitle.setText(lessons[currentLesson].lessonName);
         setSegment();
     }
 
     private void setSegment() {
-        lessonScript.setText(Lessons.lessons[currentLesson].segments[currentSegment].text);
+        lessonScript.setText(lessons[currentLesson].segments[currentSegment].text);
         play();
+        playGif();
+
     }
 
     private void setButtonListeners() {
@@ -82,6 +114,14 @@ public class LessonActivity extends AppCompatActivity {
 
     private void next() {
         // TODO: check for next lesson/segment
+//        for ( i = 0; i < lessons.length; i++) {
+//        if (currentSegment == lessons.lesson1.Lesson[currentLesson].segments.length()-1)
+//        {
+//
+//                ++currentLesson;
+//                setLesson();
+//            }
+//        }
         stop();
         ++currentSegment;
         setSegment();
@@ -90,7 +130,7 @@ public class LessonActivity extends AppCompatActivity {
 
     private void play() {
         if (player == null){
-            int audioLink = Lessons.lessons[currentLesson].segments[currentSegment].audioLink;
+            int audioLink = lessons[currentLesson].segments[currentSegment].audioLink;
             player = MediaPlayer.create(this, audioLink);
             player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
@@ -99,14 +139,15 @@ public class LessonActivity extends AppCompatActivity {
                 }
             });
         }
-        Toast.makeText(this, "Audio is playing", Toast.LENGTH_SHORT).show();
+
         player.start();
+        playGif();
     }
 
     private void pause() {
         if (player != null){
             player.pause();
-            Toast.makeText(this, "Audio paused", Toast.LENGTH_SHORT).show();
+            stopGif();
         }
     }
 
@@ -114,9 +155,28 @@ public class LessonActivity extends AppCompatActivity {
         if(player!=null){
             player.release();
             player = null;
-            Toast.makeText(this, "Audio stopped", Toast.LENGTH_SHORT).show();
+            stopGif();
         }
     }
+
+    private void stopGif() {
+        Drawable drawable = character.getDrawable();
+        if (drawable instanceof Animatable) {
+            ((Animatable) drawable).stop();
+        }
+    }
+
+    private void playGif()
+    {
+        Drawable drawable = character.getDrawable();
+        if (drawable instanceof Animatable) {
+            ((Animatable) drawable).start();
+        }
+    }
+
+
+
+
 }
 
 

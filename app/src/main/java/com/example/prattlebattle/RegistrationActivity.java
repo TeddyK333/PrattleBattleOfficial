@@ -37,16 +37,18 @@ public class RegistrationActivity extends AppCompatActivity {
             email = emailEditText.getText().toString();
             age = ageEditText.getText().toString().length() > 0 ? Integer.parseInt(ageEditText.getText().toString()) : 0;
             pass = passwordEditText.getText().toString();
+            String ageString = String.valueOf(age);
+
 
             if (isInputValid()) {
                 SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
 
-                // TODO: use string resources for sharPref keys
-                editor.putString("name", name);
-                editor.putString("email", email);
-                editor.putInt("age", age);
-                editor.putString("pass", pass); //TODO: Hash password before save (Next Iteration)
+
+                editor.putString(getString(R.string.user_name_key), name);
+                editor.putString(getString(R.string.user_email_key), email);
+                editor.putInt(getString(R.string.user_age_key), age);
+                editor.putString(getString(R.string.user_password_key), pass); //TODO: Hash password before save (Next Iteration)
                 editor.putBoolean(getString(R.string.completed_registration_key), true);
                 editor.apply();
 
@@ -61,9 +63,16 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean allFieldsAreFilled() {
-        // TODO implement;
-        return true;
-    }
+        if (name.matches("") || email.matches("") || pass.matches("")) {
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+            return true;
+            // TODO check if age field is filled
+        }
+
+
+
 
     private boolean isAgeValid() {
         if (age >= AGE_MIN && age <= AGE_MAX) {
