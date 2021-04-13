@@ -16,7 +16,7 @@ public class Lessons {
                     new LessonSegment(6, " Visual communication is the use of visual elements such as signs, typography, drawing, graphic design, illustration, industrial design, advertisement, animation, and electronic tools to communicate ideas and information.",  R.raw.a1),
                     new LessonSegment(7, " We communicate continually throughout each and every day. We do it without thinking – we operate on communication autopilot. However, it is encourageable for you to think about how you communicate with others. What is your preferred method of verbal communication?",  R.raw.a1),
                     new LessonSegment(8, " What nonverbal cues do you use when you are disinterested? Excited? Jittery? Are you an attentive listener? Can you write a succinct and well-articulated message? Are there barriers to how you communicate effectively?",  R.raw.a1),
-                    new LessonSegment(4, " Let’s begin a journey to find the answers to all of those questions! Understanding how you communicate is the first step to communicating more effectively.",  R.raw.a1),
+                    new LessonSegment(9, " Let’s begin a journey to find the answers to all of those questions! Understanding how you communicate is the first step to communicating more effectively.",  R.raw.a1),
             }
     );
 
@@ -29,5 +29,16 @@ public class Lessons {
             }
     );
 
-    public final static Lesson[] lessons = {lesson1, lesson2};
+    private final static Lesson lesson3 = new Lesson(3, "Lesson 3: Introduction to basic communication skills",
+            new LessonSegment[]{
+                    new LessonSegment(1, "In this first lesson we will just touch upon some of the basic info about communication without going into detail", R.raw.a1),
+                    new LessonSegment(2, " Verbal or oral communication occurs when we engage in speaking with others.", R.raw.a2),
+                    new LessonSegment(3, "Although listening is considered a type of communication on its own, it can never exist as a “stand-alone” since effective communication requires both parties to participate in the conversation. That’s why we consider listening and verbal communication indispensable.",  R.raw.a3),
+                    new LessonSegment(4, " What we do while we speak often says more than the actual words. Non-verbal communication includes facial expressions, posture, eye contact, hand movements, and touch.",  R.raw.a4),
+            }
+    );
+
+
+
+    public final static Lesson[] lessons = {lesson1, lesson2, lesson3};
 }

@@ -20,6 +20,7 @@ public class LessonsMenuActivity extends AppCompatActivity {
 
 
         less1 = findViewById(R.id.lessons_menu_lesson_button_1);
+        less2 = findViewById(R.id.lessons_menu_lesson_button_2);
 
 
         less1.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +30,17 @@ public class LessonsMenuActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        less2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
+                startActivity(intent);
+
             }
         });
 

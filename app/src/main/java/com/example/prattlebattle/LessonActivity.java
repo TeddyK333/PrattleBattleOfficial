@@ -90,29 +90,36 @@ public class LessonActivity extends AppCompatActivity {
 
     private void next() {
         // TODO: check for next lesson/segment
+
         stop();
         ++currentSegment;
         setSegment();
 
+
+       // Check if last Segment ??
+        if (lessons[currentLesson].segments.length - 1 == currentSegment - 1) {
+
+            if (lessons.length -1 != currentLesson )
+            {
+                stop();
+                ++currentLesson;
+                currentSegment = 0;
+                setLesson();
+            }else
+            {
+                Toast.makeText(this, " More lessons to be implemented", Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
+
+
+
+
+
     }
-        // Check if last Segment ??
-//        if (lessons[currentLesson].segments.length - 1 == currentSegment) {
-//        ++currentLesson;
-//        currentSegment = 0;
-//        stop();
-//        setLesson();
-//        }
-//        stop();
-//        ++currentSegment;
-//        setSegment();
-//
-//        if(lessons.length - 1 == currentLesson)
-//        {
-//            if (lessons[currentLesson].segments.length - 1 == currentSegment) {
-//                Toast.makeText(this, " More lessons to be implemented", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
+
+
 
 
     private void play() {
