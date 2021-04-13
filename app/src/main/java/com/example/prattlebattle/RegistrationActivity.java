@@ -18,7 +18,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final int AGE_MAX = 100;
 
     private Button registerButton;
-    private String name, email, pass;
+    private String name, email, pass, loc;
     private int age = 0;
 
     @Override
@@ -30,6 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText ageEditText = findViewById(R.id.editTextAge);
         EditText passwordEditText = findViewById(R.id.editTextPassword);
         EditText emailEditText = findViewById(R.id.editTextEmail);
+        EditText locationEditText = findViewById(R.id.editTextLoc);
         registerButton = findViewById(R.id.buttonRegister);
 
         registerButton.setOnClickListener(view -> {
@@ -37,7 +38,8 @@ public class RegistrationActivity extends AppCompatActivity {
             email = emailEditText.getText().toString();
             age = ageEditText.getText().toString().length() > 0 ? Integer.parseInt(ageEditText.getText().toString()) : 0;
             pass = passwordEditText.getText().toString();
-            String ageString = String.valueOf(age);
+            loc = locationEditText.getText().toString();
+
 
 
             if (isInputValid()) {
@@ -49,6 +51,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 editor.putString(getString(R.string.user_email_key), email);
                 editor.putInt(getString(R.string.user_age_key), age);
                 editor.putString(getString(R.string.user_password_key), pass); //TODO: Hash password before save (Next Iteration)
+                editor.putString(getString(R.string.user_location_key), loc);
                 editor.putBoolean(getString(R.string.completed_registration_key), true);
                 editor.apply();
 
@@ -63,12 +66,16 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean allFieldsAreFilled() {
-        if (name.matches("") || email.matches("") || pass.matches("")) {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            return false;
+        if (!(name.matches("") || loc.matches("") || pass.matches(""))) {
+            return true;
         }
-        return true;
+        Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+        return false;
+
     }
+
+
+
 
     private boolean isAgeValid() {
         if (age >= AGE_MIN && age <= AGE_MAX) {

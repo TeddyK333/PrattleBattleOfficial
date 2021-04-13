@@ -3,6 +3,7 @@ package com.example.prattlebattle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -65,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isFirstTimeUser() {
-//        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
-//        return !sharedPref.getBoolean(getString(R.string.completed_registration_key), false);
-        return true;
+        SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
+        return !sharedPref.getBoolean(getString(R.string.completed_registration_key), false);
+
     }
 }
 

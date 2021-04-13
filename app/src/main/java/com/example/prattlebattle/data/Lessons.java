@@ -20,12 +20,12 @@ public class Lessons {
             }
     );
 
-    private final static Lesson lesson2 = new Lesson(1, "Lesson 1: Introduction to basic communication skills",
+    private final static Lesson lesson2 = new Lesson(2, "Lesson 2: Types of listening to focus on",
             new LessonSegment[]{
-                    new LessonSegment(1, "In this first lesson we will just touch upon some of the basic info about communication without going into detail", R.raw.a1),
-                    new LessonSegment(2, " Verbal or oral communication occurs when we engage in speaking with others.  ", R.raw.a1),
-                    new LessonSegment(3, "Although listening is considered a type of communication on its own, it can never exist as a “stand-alone” since effective communication requires both parties to participate in the conversation.",  R.raw.a1),
-                    new LessonSegment(4, " That’s why we consider listening and verbal communication indispensable - one whole.",  R.raw.a1),
+                    new LessonSegment(1, "Most people take listening for granted; it's something that just happens to them. It is only when you take the time to consider what listening entails that you realize that it is a vital skill that should be nurtured and developed.", R.raw.a1),
+                    new LessonSegment(2, " Perhaps the most important interpersonal skill is listening. Effective listening is often the basis of good personal relationships, whether at home, socially, in education, or at work. Receiving, constructing meaning from, and reacting to spoken and/or nonverbal messages is the act of listening.", R.raw.a1),
+                    new LessonSegment(3, "Ignoring - the worst kind. Doesn’t even involve listening.",  R.raw.a1),
+                    new LessonSegment(4, " Pretending - acting as if you are listening but actually paying attention to something else. Certainly not an effective type of listening as it still makes the other party feel ignored.",  R.raw.a1),
             }
     );
 

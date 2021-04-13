@@ -7,6 +7,31 @@
     android:backgroundTint="@android:color/holo_orange_dark"
     android:foregroundTint="@android:color/holo_orange_dark">
 
+    <ImageView
+        android:id="@+id/ImageBG"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+    <Button
+        android:id="@+id/buttonToEvents"
+        android:layout_width="355dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#AF0C0C"
+        android:text="Events"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textViewTittle"
         android:layout_width="181dp"
@@ -41,7 +66,7 @@
         android:layout_width="355dp"
         android:layout_height="67dp"
         android:layout_marginTop="33dp"
-        android:backgroundTint="@android:color/holo_orange_dark"
+        android:backgroundTint="@color/purple_700"
         android:fontFamily="sans-serif"
         android:shape="oval"
         android:text="@string/subscribe_now"
@@ -78,7 +103,7 @@
         android:layout_width="355dp"
         android:layout_height="85dp"
         android:layout_marginTop="7dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/teal_700"
         android:text="@string/rehearse_to_converse"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +115,7 @@
         android:id="@+id/buttonToLessons"
         android:layout_width="355dp"
         android:layout_height="85dp"
-        android:backgroundTint="@color/teal_200"
+        android:backgroundTint="@color/main"
         android:text="@string/start_reading_amp_listening"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,23 +123,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTheory" />
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:layout_width="415dp"-->
-<!--        android:layout_height="93dp"-->
-<!--        android:layout_marginTop="99dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/buttonToPractice" />-->
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifCharacterImageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/character"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonToPractice" />
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:layout_width="415dp"-->
+    <!--        android:layout_height="93dp"-->
+    <!--        android:layout_marginTop="99dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/buttonToPractice" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

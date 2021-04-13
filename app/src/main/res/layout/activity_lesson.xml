@@ -7,30 +7,15 @@
     tools:context=".LessonActivity">
 
     <Button
-        android:id="@+id/otherLessonsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#FF5722"
-        android:text="Lessons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonMain"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="35dp"
         android:backgroundTint="#FF5722"
         android:text="@string/NextButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonMain" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/TextViewLessonTitle"
@@ -50,9 +35,9 @@
         android:id="@+id/gifCharacterImageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/character"
-        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -73,48 +58,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#FF5722"
         android:text="@string/play"
         app:iconTint="#FF5722"
         app:layout_constraintBottom_toTopOf="@+id/buttonPause"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewLessonTitle"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#FF5722"
         android:text="@string/pause"
         app:iconTint="#FF5722"
         app:layout_constraintBottom_toTopOf="@+id/buttonStop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlay" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="#FF5722"
         android:text="@string/stop"
-        app:layout_constraintBottom_toTopOf="@+id/otherLessonsButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPause" />
-
-    <Button
-        android:id="@+id/buttonMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#FF5722"
-        android:text="@string/main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonNext"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/otherLessonsButton" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

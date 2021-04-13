@@ -19,8 +19,8 @@ public class LessonsMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lessons_menu);
 
 
-        less1 = findViewById(R.id.LessonNumber1);
-        less2 = findViewById(R.id.LessonNumber2);
+        less1 = findViewById(R.id.lessons_menu_lesson_button_1);
+
 
         less1.setOnClickListener(new View.OnClickListener() {
             @Override

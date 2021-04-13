@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.example.prattlebattle.data.Lessons.lessons;
 
@@ -27,8 +28,7 @@ public class LessonActivity extends AppCompatActivity {
     private TextView lessonTitle;
     private TextView lessonScript;
     private ImageView character;
-    private Button mainButton;
-    private Button otherLessonsButton;
+
 
 
     @Override
@@ -46,8 +46,7 @@ public class LessonActivity extends AppCompatActivity {
         lessonTitle = findViewById(R.id.TextViewLessonTitle);
         lessonScript = findViewById(R.id.TextViewLesson);
         character = findViewById(R.id.gifCharacterImageView);
-        mainButton = findViewById(R.id.buttonMain);
-        otherLessonsButton = findViewById(R.id.otherLessonsButton);
+
 
 
 
@@ -55,20 +54,7 @@ public class LessonActivity extends AppCompatActivity {
 
         init();
 
-        mainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LessonActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-        otherLessonsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LessonActivity.this, LessonsMenuActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 
@@ -104,25 +90,29 @@ public class LessonActivity extends AppCompatActivity {
 
     private void next() {
         // TODO: check for next lesson/segment
-
-        // Check if last Segment
-        if (lessons[currentLesson].segments.length - 1 == currentSegment) {
-
-        }
-
-
-//        for ( i = 0; i < lessons.length; i++) {
-//        if (currentSegment == lessons.lesson1.Lesson[currentLesson].segments.length()-1)
-//        {
-//
-//                ++currentLesson;
-//                setLesson();
-//            }
-//        }
         stop();
         ++currentSegment;
         setSegment();
+
     }
+        // Check if last Segment ??
+//        if (lessons[currentLesson].segments.length - 1 == currentSegment) {
+//        ++currentLesson;
+//        currentSegment = 0;
+//        stop();
+//        setLesson();
+//        }
+//        stop();
+//        ++currentSegment;
+//        setSegment();
+//
+//        if(lessons.length - 1 == currentLesson)
+//        {
+//            if (lessons[currentLesson].segments.length - 1 == currentSegment) {
+//                Toast.makeText(this, " More lessons to be implemented", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+//    }
 
 
     private void play() {

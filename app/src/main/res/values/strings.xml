@@ -19,6 +19,7 @@
     <string name="user_age_key">Enter your age</string>
     <string name="user_email_key">Enter your email</string>
     <string name="user_password_key">Enter a password</string>
+    <string name="user_location_key">Enter your location</string>
 
     <string name="completed_registration_key">completedRegistration</string>
 
