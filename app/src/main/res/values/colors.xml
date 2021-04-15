@@ -7,7 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="main">#E04A04</color>
+    <color name="main">#E6A287</color>
     <color name="toBeImplemented">#D8DAD5D3</color>
-
+    <color name="mainButtons">#A8D3AE74</color>
+    <color name="mainButtonText">#504545</color>
+    <color name="nextButton">#A8ADA8B3</color>
+    <color name="nextButtonText">#504545</color>
+    <color name="transparent">#00504545</color>
+<!--    #F99963-->
 </resources>

@@ -38,10 +38,10 @@ public class LessonActivity extends AppCompatActivity {
 
         currentLesson = getIntent().getIntExtra("lessonNumber", 0);
 
-        nextButton = (Button) findViewById(R.id.buttonNext);
-        playButton = (Button) findViewById(R.id.buttonPlay);
-        pauseButton = (Button) findViewById(R.id.buttonPause);
-        stopButton = (Button) findViewById(R.id.buttonStop);
+        nextButton = findViewById(R.id.buttonNext);
+        playButton =  findViewById(R.id.buttonPlay);
+        pauseButton =  findViewById(R.id.buttonPause);
+        stopButton =  findViewById(R.id.buttonStop);
         lessonTitle = findViewById(R.id.TextViewLessonTitle);
         lessonScript = findViewById(R.id.TextViewLesson);
         character = findViewById(R.id.gifCharacterImageView);
@@ -88,6 +88,7 @@ public class LessonActivity extends AppCompatActivity {
                 setLesson();
             } else {
                 Toast.makeText(this, " More lessons to be implemented", Toast.LENGTH_SHORT).show();
+                return;
             }
         }
 
@@ -100,12 +101,7 @@ public class LessonActivity extends AppCompatActivity {
         if (player == null){
             int audioLink = lessons[currentLesson].segments[currentSegment].audioLink;
             player = MediaPlayer.create(this, audioLink);
-            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    stop();
-                }
-            });
+            player.setOnCompletionListener(mp -> stop());
         }
 
         player.start();

@@ -12,8 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginBottom="35dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="@color/nextButton"
         android:text="@string/NextButton"
+        android:textColor="@color/nextButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,9 +60,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginBottom="15dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="@color/mainButtons"
+        android:shadowColor="#4C3434"
         android:text="@string/play"
-        app:iconTint="#FF5722"
+        android:textColor="@color/mainButtonText"
+        android:textColorHighlight="#9C27B0"
         app:layout_constraintBottom_toTopOf="@+id/buttonPause"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -71,9 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginBottom="15dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="@color/mainButtons"
         android:text="@string/pause"
-        app:iconTint="#FF5722"
+        android:textColor="@color/mainButtonText"
         app:layout_constraintBottom_toTopOf="@+id/buttonStop"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -83,8 +86,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginBottom="15dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="@color/mainButtons"
         android:text="@string/stop"
+        android:textColor="@color/mainButtonText"
         app:layout_constraintBottom_toTopOf="@+id/buttonNext"
         app:layout_constraintStart_toStartOf="parent" />
 

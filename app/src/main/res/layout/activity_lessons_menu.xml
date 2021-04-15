@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Lessons"
+        android:text="@string/lessons"
         android:textColor="#100F0F"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,28 +39,28 @@
                 style="@style/LessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 1" />
+                android:text="@string/lesson_1" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_2"
                 style="@style/LessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 2" />
+                android:text="@string/lesson_2" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_3"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 3" />
+                android:text="@string/lesson_3" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_4"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 4" />
+                android:text="@string/lesson_4" />
         </TableRow>
 
         <TableRow
@@ -73,28 +73,28 @@
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 5" />
+                android:text="@string/lesson_5" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_6"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 6" />
+                android:text="@string/lesson_6" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_7"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 7" />
+                android:text="@string/lesson_7" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_8"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 8" />
+                android:text="@string/lesson_8" />
         </TableRow>
 
         <TableRow
@@ -107,28 +107,28 @@
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 9" />
+                android:text="@string/lesson_9" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_10"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 10" />
+                android:text="@string/lesson_10" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_11"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 11" />
+                android:text="@string/lesson_11" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_12"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 12" />
+                android:text="@string/lesson_12" />
         </TableRow>
 
         <TableRow
@@ -141,28 +141,28 @@
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 13" />
+                android:text="@string/lesson_13" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_14"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 14" />
+                android:text="@string/lesson_14" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_15"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 15" />
+                android:text="@string/lesson_15" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lessons_menu_lesson_button_16"
                 style="@style/InactiveLessonButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lesson 16" />
+                android:text="@string/lesson_16" />
         </TableRow>
 
     </TableLayout>

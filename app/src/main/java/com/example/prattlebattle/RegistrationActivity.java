@@ -51,7 +51,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 editor.putString(getString(R.string.user_email_key), email);
                 editor.putInt(getString(R.string.user_age_key), age);
                 editor.putString(getString(R.string.user_password_key), pass); //TODO: Hash password before save (Next Iteration)
-                editor.putString(getString(R.string.user_location_key), loc);
+                editor.putString(getString(R.string.user_location_key), loc); //TODO: validate location
                 editor.putBoolean(getString(R.string.completed_registration_key), true);
                 editor.apply();
 
@@ -86,7 +86,7 @@ public class RegistrationActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             return true;
         }
-        Toast.makeText(this, R.string.invalidAge, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.invalidEmail, Toast.LENGTH_SHORT).show();
         return false;
     }
 }
