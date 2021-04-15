@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,58 +18,26 @@ public class MainActivity extends AppCompatActivity {
         init();
 
 
-        Button Subscribe = (Button) findViewById(R.id.buttonSubscribe);
-        Button Lessons = (Button) findViewById(R.id.buttonToLessons);
-        Button Practice = (Button) findViewById(R.id.buttonToPractice);
-        Button Events = (Button) findViewById(R.id.buttonToEvents);
-        Button Consultations = (Button) findViewById(R.id.buttonToConsult);
+        Button Subscribe =  findViewById(R.id.buttonSubscribe);
+        Button Lessons =  findViewById(R.id.buttonToLessons);
+        Button Practice = findViewById(R.id.buttonToPractice);
+        Button Events =  findViewById(R.id.buttonToEvents);
+        Button Consultations =  findViewById(R.id.buttonToConsult);
 
-        Lessons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        Lessons.setOnClickListener(view -> {
 
 
-                Intent intent = new Intent(MainActivity.this, LessonsMenuActivity.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(MainActivity.this, LessonsMenuActivity.class);
+            startActivity(intent);
         });
 
-        Practice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        Practice.setOnClickListener(view -> Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show());
 
-                Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MainActivity.this, PracticeActivity.class);
-//                startActivity(intent);
-            }
-        });
+        Subscribe.setOnClickListener(view -> Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show());
 
-        Subscribe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        Events.setOnClickListener(view -> Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show());
 
-
-                Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Events.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Consultations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
-            }
-        });
+        Consultations.setOnClickListener(view -> Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show());
     }
 
     private void init() {

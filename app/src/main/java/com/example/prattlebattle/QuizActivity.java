@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.prattlebattle.model.Answer;
 import com.example.prattlebattle.model.Question;
@@ -33,8 +33,8 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        radioGroupAnswers = (RadioGroup) findViewById(R.id.radio_group_quiz_answers);
-        nextQuestionButton = (Button) findViewById(R.id.button_quiz_next);
+        radioGroupAnswers =  findViewById(R.id.radio_group_quiz_answers);
+        nextQuestionButton = findViewById(R.id.button_quiz_next);
         question = findViewById(R.id.text_view_quiz_question_title);
         answerViews = new RadioButton[]{
                 findViewById(R.id.radio_button_quiz_answer_1),
