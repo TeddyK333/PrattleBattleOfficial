@@ -74,9 +74,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
-
-
-
     private boolean isAgeValid() {
         if (age >= AGE_MIN && age <= AGE_MAX) {
             return true;

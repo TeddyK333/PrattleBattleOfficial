@@ -36,8 +36,7 @@ public class LessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
 
-        // TODO: get from intent the current lesson and segment
-        // homeandlearn.co.uk/android/intent_put_extra.html
+        currentLesson = getIntent().getIntExtra("lessonNumber", 0);
 
         nextButton = (Button) findViewById(R.id.buttonNext);
         playButton = (Button) findViewById(R.id.buttonPlay);
@@ -47,15 +46,7 @@ public class LessonActivity extends AppCompatActivity {
         lessonScript = findViewById(R.id.TextViewLesson);
         character = findViewById(R.id.gifCharacterImageView);
 
-
-
-
-
-
         init();
-
-
-
     }
 
     @Override
@@ -89,38 +80,21 @@ public class LessonActivity extends AppCompatActivity {
     }
 
     private void next() {
-        // TODO: check for next lesson/segment
-
-        stop();
-        ++currentSegment;
-        setSegment();
-
-
-       // Check if last Segment ??
-        if (lessons[currentLesson].segments.length - 1 == currentSegment - 1) {
-
-            if (lessons.length -1 != currentLesson )
-            {
+        if (lessons[currentLesson].segments.length - 1 == currentSegment) {
+            if (lessons.length - 1 != currentLesson ) {
                 stop();
                 ++currentLesson;
                 currentSegment = 0;
                 setLesson();
-            }else
-            {
+            } else {
                 Toast.makeText(this, " More lessons to be implemented", Toast.LENGTH_SHORT).show();
             }
-
-
         }
 
-
-
-
-
+        stop();
+        ++currentSegment;
+        setSegment();
     }
-
-
-
 
     private void play() {
         if (player == null){
@@ -167,10 +141,6 @@ public class LessonActivity extends AppCompatActivity {
             ((Animatable) drawable).start();
         }
     }
-
-
-
-
 }
 
 

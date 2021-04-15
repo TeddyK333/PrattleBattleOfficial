@@ -21,33 +21,20 @@ public class LessonsMenuActivity extends AppCompatActivity {
 
         less1 = findViewById(R.id.lessons_menu_lesson_button_1);
         less2 = findViewById(R.id.lessons_menu_lesson_button_2);
+        less12 = findViewById(R.id.lessons_menu_lesson_button_12);
 
 
-        less1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
-                startActivity(intent);
-            }
+        less1.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
+            intent.putExtra("lessonNumber", 0);
+            startActivity(intent);
         });
+        less2.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
+            intent.putExtra("lessonNumber", 1);
+            startActivity(intent);
 
-        less2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
-                startActivity(intent);
-
-            }
         });
-
-
-        Toast.makeText(this, "To be implemented", Toast.LENGTH_SHORT).show();
-
-
-
+        less12.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());
     }
 }

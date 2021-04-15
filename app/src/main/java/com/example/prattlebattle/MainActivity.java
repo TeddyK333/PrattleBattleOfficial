@@ -72,16 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
-
     }
 
     private void init() {
         if (isFirstTimeUser()) {
-            Intent intent = new Intent(this, RegistrationActivity.class);
+            Intent intent = new Intent(this, IntroActivity.class);
             startActivity(intent);
         }
     }
@@ -89,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
     private boolean isFirstTimeUser() {
         SharedPreferences sharedPref = getSharedPreferences("main", MODE_PRIVATE);
         return !sharedPref.getBoolean(getString(R.string.completed_registration_key), false);
-
     }
 }
 
