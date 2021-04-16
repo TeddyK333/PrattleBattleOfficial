@@ -1,8 +1,12 @@
 package com.example.prattlebattle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,23 +39,48 @@ public class PracticeActivity extends AppCompatActivity {
     }
 
     private void init() {
-        setButtonListeners();
-        setLesson();
+        setListeners();
+        setScenario();
     }
 
-    private void setLesson() {
+    private void setScenario() {
         scenarioTitle.setText(practiceScenarios[currentPracticeScenario].title);
         scenarioText.setText(practiceScenarios[currentPracticeScenario].text);
         itemsAdapter = new ActionAdapter(this, practiceScenarios[currentPracticeScenario].actions);
         listView.setAdapter(itemsAdapter);
     }
 
-    private void setButtonListeners() {
-        listView.setOnItemClickListener(new ActionAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),animalName[i],Toast.LENGTH_LONG).show();//show the selected image in toast according to position
-            }
+    private void setListeners() {
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            onActionClick(position);
         });
+    }
+
+    private void onActionClick(int actionNumber) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(practiceScenarios[currentPracticeScenario].actions[actionNumber].hint);
+        builder.setCancelable(false);
+
+        String buttonText = practiceScenarios[currentPracticeScenario].actions[actionNumber].isCorrect ?
+                "Next" : "Try again";
+
+        builder.setPositiveButton(
+                buttonText,
+                (dialog, id) -> {
+                    dialog.cancel();
+                    continueFormAction(actionNumber);
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private void continueFormAction(int actionNumber) {
+        if (practiceScenarios[currentPracticeScenario].actions[actionNumber].isCorrect) {
+            // TODO check if last scenario
+            ++currentPracticeScenario;
+            setScenario();
+
+        }
     }
 }

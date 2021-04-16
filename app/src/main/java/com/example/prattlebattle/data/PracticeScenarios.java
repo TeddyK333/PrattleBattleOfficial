@@ -14,5 +14,13 @@ public class PracticeScenarios {
             }
     );
 
-    public final static PracticeScenario[] practiceScenarios = {scenario1};
+    private final static PracticeScenario scenario2 = new PracticeScenario("Practice 1",
+            "Sun random pleb messes with you!!!! What do you do?",
+            new PracticeAction[]{
+                    new PracticeAction("Kill the mf", "Great choce!", true, null),
+                    new PracticeAction("Make him find out", "Old meme, try again!", false, 1)
+            }
+    );
+
+    public final static PracticeScenario[] practiceScenarios = {scenario1, scenario2};
 }
