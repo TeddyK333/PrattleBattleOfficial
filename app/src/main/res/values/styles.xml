@@ -3,7 +3,7 @@
     <style name="LessonButton" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/mainButtonText</item>
         <item name="android:textSize">10sp</item>
-        <item name="android:backgroundTint">#D3AE74</item>
+        <item name="android:backgroundTint">@color/mainButtons</item>
     </style>
     <style name="InactiveLessonButton" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/mainButtonText</item>
