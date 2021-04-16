@@ -25,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
         Button Consultations =  findViewById(R.id.buttonToConsult);
 
         Lessons.setOnClickListener(view -> {
-
-
             Intent intent = new Intent(MainActivity.this, LessonsMenuActivity.class);
             startActivity(intent);
         });
 
-        Practice.setOnClickListener(view -> Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show());
+        Practice.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PracticeActivity.class);
+            startActivity(intent);
+        });
 
         Subscribe.setOnClickListener(view -> Toast.makeText(MainActivity.this,"To be implemented", Toast.LENGTH_SHORT).show());
 

@@ -6,9 +6,9 @@
     <string name="NextButton">Next</string>
     <string name="CompleteQuizButton">Finish</string>
     <string name="RegisterButton">Register</string>
-    <string name="LessonName">LessonName</string>
+    <string name="Title">Title</string>
     <string name="todo">TODO</string>
-    <string name="LessonScript">LessonScript</string>
+    <string name="Content">Content</string>
 
 
     <string name="invalidAge">Invalid age! Age must be between 5 and 100</string>

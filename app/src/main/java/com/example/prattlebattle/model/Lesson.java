@@ -10,13 +10,11 @@ import com.example.prattlebattle.R;
 import java.util.ArrayList;
 
 public class Lesson {
-    public int number;
     public String lessonName;
     public LessonSegment[] segments;
     public boolean isCompleted;
 
-    public Lesson(int number, String lessonName, LessonSegment[] segments) {
-        this.number = number;
+    public Lesson(String lessonName, LessonSegment[] segments) {
         this.lessonName = lessonName;
         this.segments = segments;
 

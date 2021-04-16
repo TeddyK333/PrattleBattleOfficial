@@ -19,9 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LessonActivity" />
-        <activity
-            android:name=".RegistrationActivity"
-            android:exported="true" />
+        <activity android:name=".RegistrationActivity"/>
         <activity android:name=".IntroActivity" />
         <activity android:name=".QuizActivity" />
     </application>
