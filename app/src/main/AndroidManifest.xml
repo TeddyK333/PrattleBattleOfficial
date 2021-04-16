@@ -21,7 +21,8 @@
         <activity android:name=".LessonActivity" />
         <activity android:name=".RegistrationActivity"/>
         <activity android:name=".IntroActivity" />
-        <activity android:name=".QuizActivity" />
+        <activity android:name=".QuizActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

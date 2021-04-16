@@ -28,6 +28,7 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton[] answerViews;
     private Button nextQuestionButton;
     private RadioGroup radioGroupAnswers;
+    private TextView quizScoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class QuizActivity extends AppCompatActivity {
         radioGroupAnswers =  findViewById(R.id.radio_group_quiz_answers);
         nextQuestionButton = findViewById(R.id.button_quiz_next);
         question = findViewById(R.id.text_view_quiz_question_title);
+        quizScoreTextView = findViewById((R.id.textViewQuizScore));
         answerViews = new RadioButton[]{
                 findViewById(R.id.radio_button_quiz_answer_1),
                 findViewById(R.id.radio_button_quiz_answer_2),
@@ -64,10 +66,30 @@ public class QuizActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putInt("score", totalScore);
                     editor.apply();
+                    question.setText("Scores");
+                    ++currentQuestion;
+                    radioGroupAnswers.setVisibility(View.GONE);
+                    quizScoreTextView.setVisibility(View.VISIBLE);
+                    if(totalScore < 8) {
+                        nextQuestionButton.setText(getResources().getString(R.string.NextButton));
+                        quizScoreTextView.setText("You need to keep working on your communication skills. You are not expressing yourself clearly, and you might even be misinterpreting messages. The good news is that you can develop your communication skills by paying close attention to how you communicate." + "Join me in this adventure where we can learn together!");
+                    }else if(totalScore < 15)
+                    {
+                        nextQuestionButton.setText(getResources().getString(R.string.NextButton));
+                        quizScoreTextView.setText("You're a good communicator, but you have communication issues from time to time. Take some time to consider your communication strategy, and pay attention to how well you receive messages as well as how well you deliver them. This will assist you in improving your communication skills." + "Join me in this adventure where we can learn together!");
+                    }
+                    else {
+                        nextQuestionButton.setText(getResources().getString(R.string.NextButton));
+                        quizScoreTextView.setText("Generally, you are aware of your position as a communicator, both when sending and receiving messages. But there is always room for improvement."  + "Join me in this adventure where we can learn together!");
+                    }
+                } else if(currentQuestion == quizQuestions.size()  )
+                {
+                    //TODO fix this --> go to registration after giving quiz score results
 
                     Intent intent = new Intent(this, RegistrationActivity.class);
                     startActivity(intent);
-                } else {
+                }
+                else {
                     ++currentQuestion;
                     setQuestion();
                 }
