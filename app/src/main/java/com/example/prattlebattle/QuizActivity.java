@@ -82,7 +82,7 @@ public class QuizActivity extends AppCompatActivity {
                     else {
                         quizScoreTextView.setText(getResources().getString(R.string.totalScoreMoreThan14));
                     }
-                } else if(currentQuestion == quizQuestions.size()  )
+                } else if(currentQuestion == quizQuestions.size())
                 {
                     //TODO fix this --> go to registration after giving quiz score results
 
