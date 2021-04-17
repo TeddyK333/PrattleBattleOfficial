@@ -72,16 +72,14 @@ public class QuizActivity extends AppCompatActivity {
                     ++currentQuestion;
                     radioGroupAnswers.setVisibility(View.GONE);
                     quizScoreTextView.setVisibility(View.VISIBLE);
+                    nextQuestionButton.setText(getResources().getString(R.string.NextButton));
                     if(totalScore < 8) {
-                        nextQuestionButton.setText(getResources().getString(R.string.NextButton));
                         quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan8));
                     }else if(totalScore < 15)
                     {
-                        nextQuestionButton.setText(getResources().getString(R.string.NextButton));
                         quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan15));
                     }
                     else {
-                        nextQuestionButton.setText(getResources().getString(R.string.NextButton));
                         quizScoreTextView.setText(getResources().getString(R.string.totalScoreMoreThan14));
                     }
                 } else if(currentQuestion == quizQuestions.size()  )
