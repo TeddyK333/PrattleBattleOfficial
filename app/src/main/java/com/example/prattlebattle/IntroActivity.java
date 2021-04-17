@@ -38,3 +38,4 @@ public class IntroActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+//TODO remove white boxes
