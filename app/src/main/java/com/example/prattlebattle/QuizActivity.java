@@ -2,6 +2,7 @@ package com.example.prattlebattle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -54,6 +55,7 @@ public class QuizActivity extends AppCompatActivity {
         setQuestion();
     }
 
+    @SuppressLint("SetTextI18n")
     private void createListener() {
         nextQuestionButton.setOnClickListener(view -> {
             if (radioGroupAnswers.getCheckedRadioButtonId() != -1) {
@@ -72,15 +74,15 @@ public class QuizActivity extends AppCompatActivity {
                     quizScoreTextView.setVisibility(View.VISIBLE);
                     if(totalScore < 8) {
                         nextQuestionButton.setText(getResources().getString(R.string.NextButton));
-                        quizScoreTextView.setText("You need to keep working on your communication skills. You are not expressing yourself clearly, and you might even be misinterpreting messages. The good news is that you can develop your communication skills by paying close attention to how you communicate." + "Join me in this adventure where we can learn together!");
+                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan8));
                     }else if(totalScore < 15)
                     {
                         nextQuestionButton.setText(getResources().getString(R.string.NextButton));
-                        quizScoreTextView.setText("You're a good communicator, but you have communication issues from time to time. Take some time to consider your communication strategy, and pay attention to how well you receive messages as well as how well you deliver them. This will assist you in improving your communication skills." + "Join me in this adventure where we can learn together!");
+                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan15));
                     }
                     else {
                         nextQuestionButton.setText(getResources().getString(R.string.NextButton));
-                        quizScoreTextView.setText("Generally, you are aware of your position as a communicator, both when sending and receiving messages. But there is always room for improvement."  + "Join me in this adventure where we can learn together!");
+                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreMoreThan14));
                     }
                 } else if(currentQuestion == quizQuestions.size()  )
                 {
