@@ -3,16 +3,20 @@ package com.example.prattlebattle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.prattlebattle.adapter.ActionAdapter;
+import com.example.prattlebattle.data.PracticeScenarios;
 import com.example.prattlebattle.model.PracticeAction;
 
 import static com.example.prattlebattle.data.Lessons.lessons;
@@ -77,10 +81,21 @@ public class PracticeActivity extends AppCompatActivity {
 
     private void continueFormAction(int actionNumber) {
         if (practiceScenarios[currentPracticeScenario].actions[actionNumber].isCorrect) {
-            // TODO check if last scenario
-            ++currentPracticeScenario;
-            setScenario();
+            if (currentPracticeScenario == practiceScenarios.length - 1) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            } else {
+                ++currentPracticeScenario;
+                setScenario();
+            }
+        }
+
+
+
+    //TODO get rid of white boxes when there is no hint or write a hint suitable for the situation
+
+
 
         }
     }
-}
+

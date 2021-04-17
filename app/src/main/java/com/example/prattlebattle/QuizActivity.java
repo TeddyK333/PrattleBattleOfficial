@@ -58,6 +58,7 @@ public class QuizActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void createListener() {
         nextQuestionButton.setOnClickListener(view -> {
+
             if (radioGroupAnswers.getCheckedRadioButtonId() != -1) {
                 int id = radioGroupAnswers.indexOfChild(radioGroupAnswers.findViewById(radioGroupAnswers.getCheckedRadioButtonId()));
                 totalScore += quizQuestions.get(currentQuestion).answers[id].score;
@@ -68,34 +69,61 @@ public class QuizActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putInt("score", totalScore);
                     editor.apply();
-                    question.setText("Scores");
-                    ++currentQuestion;
-                    radioGroupAnswers.setVisibility(View.GONE);
-                    quizScoreTextView.setVisibility(View.VISIBLE);
-                    nextQuestionButton.setText(getResources().getString(R.string.NextButton));
-                    if(totalScore < 8) {
-                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan8));
-                    }else if(totalScore < 15)
-                    {
-                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan15));
-                    }
-                    else {
-                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreMoreThan14));
-                    }
-                } else if(currentQuestion == quizQuestions.size())
-                {
-                    //TODO fix this --> go to registration after giving quiz score results
 
                     Intent intent = new Intent(this, RegistrationActivity.class);
                     startActivity(intent);
-                }
-                else {
+                } else {
                     ++currentQuestion;
                     setQuestion();
                 }
             }
         });
     }
+
+
+
+
+
+
+
+//            if (radioGroupAnswers.getCheckedRadioButtonId() != -1) {
+//                int id = radioGroupAnswers.indexOfChild(radioGroupAnswers.findViewById(radioGroupAnswers.getCheckedRadioButtonId()));
+//                totalScore += quizQuestions.get(currentQuestion).answers[id].score;
+//                radioGroupAnswers.clearCheck();
+//
+//                if (currentQuestion == quizQuestions.size() - 1) {
+//                    SharedPreferences sharedPreferences = getSharedPreferences("main", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPreferences.edit();
+//                    editor.putInt("score", totalScore);
+//                    editor.apply();
+//                    question.setText("Scores");
+//                    ++currentQuestion;
+//                    radioGroupAnswers.setVisibility(View.GONE);
+//                    quizScoreTextView.setVisibility(View.VISIBLE);
+//                    nextQuestionButton.setText(getResources().getString(R.string.NextButton));
+//                    if(totalScore < 8) {
+//                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan8));
+//                    }else if(totalScore < 15)
+//                    {
+//                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan15));
+//                    }
+//                    else {
+//                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreMoreThan14));
+//                    }
+//                } else if(currentQuestion == quizQuestions.size())
+//                {
+//                    //TODO fix this --> go to registration after giving quiz score results
+//
+//                    Intent intent = new Intent(this, RegistrationActivity.class);
+//                    startActivity(intent);
+//                }
+//                else {
+//                    ++currentQuestion;
+//                    setQuestion();
+//                }
+//            }
+//        });
+//    }
 
     private void setQuestion() {
         question.setText(quizQuestions.get(currentQuestion).text);
