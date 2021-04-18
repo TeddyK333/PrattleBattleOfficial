@@ -13,7 +13,7 @@
         android:id="@+id/TextViewPracticeTitle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/black"
         android:text="@string/Title"
         android:textAlignment="center"
@@ -48,11 +48,13 @@
         app:layout_constraintTop_toBottomOf="@id/TextViewPracticeText" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewPractice"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

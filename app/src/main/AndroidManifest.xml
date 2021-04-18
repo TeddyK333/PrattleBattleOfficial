@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PrattleBattle">
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/frame_image_view" />
-
         <activity android:name=".LessonsMenuActivity" />
         <activity android:name=".PracticeActivity" />
         <activity android:name=".MainActivity">
@@ -26,8 +22,7 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".IntroActivity" />
         <activity
-            android:name=".QuizActivity"
-            android:exported="true" />
+            android:name=".QuizActivity" />
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class PracticeActivity extends AppCompatActivity {
     private ListView listView;
     private TextView scenarioTitle;
     private TextView scenarioText;
+    private ImageView scenarioImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,9 @@ public class PracticeActivity extends AppCompatActivity {
 
         scenarioTitle = findViewById(R.id.TextViewPracticeTitle);
         scenarioText = findViewById(R.id.TextViewPracticeText);
+        scenarioImage = findViewById(R.id.imageViewPractice);
         listView = (ListView) findViewById(R.id.PracticeActionsList);
+
 
         init();
     }
@@ -50,14 +54,13 @@ public class PracticeActivity extends AppCompatActivity {
     private void setScenario() {
         scenarioTitle.setText(practiceScenarios[currentPracticeScenario].title);
         scenarioText.setText(practiceScenarios[currentPracticeScenario].text);
+        scenarioImage.setImageResource(practiceScenarios[currentPracticeScenario].image);
         itemsAdapter = new ActionAdapter(this, practiceScenarios[currentPracticeScenario].actions);
         listView.setAdapter(itemsAdapter);
     }
 
     private void setListeners() {
-        listView.setOnItemClickListener((parent, view, position, id) -> {
-            onActionClick(position);
-        });
+        listView.setOnItemClickListener((parent, view, position, id) -> onActionClick(position));
     }
 
     private void onActionClick(int actionNumber) {
