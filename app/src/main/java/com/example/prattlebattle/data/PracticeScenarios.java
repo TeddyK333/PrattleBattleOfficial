@@ -6,7 +6,7 @@ import com.example.prattlebattle.model.PracticeScenario;
 
 public class PracticeScenarios {
 
-    private final static PracticeScenario scenario1 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario1 = new PracticeScenario("Practice 1: Emphatic listening",
             "You are at school and you see your friend Patty. You think of approaching her. But first you should determine her emotions to act accordingly.Based on her body language, how is Patty feeling?",
             new PracticeAction[]{
                     new PracticeAction("Sad or angry", "Great choice!", true, null),
@@ -15,7 +15,7 @@ public class PracticeScenarios {
             }
     );
 
-    private final static PracticeScenario scenario2 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario2 = new PracticeScenario("Practice 1: Emphatic listening",
             "What will you do?",
             new PracticeAction[]{
                     new PracticeAction("Approach her", "Great choice!", true, null),
@@ -23,14 +23,14 @@ public class PracticeScenarios {
             }
     );
 
-    private final static PracticeScenario scenario3 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario3 = new PracticeScenario("Practice 1: Emphatic listening",
             "",
             new PracticeAction[]{
                     new PracticeAction("Say: \"Hi, Patty.\"", "Moving forwards.", true, null),
 
             }
     );
-    private final static PracticeScenario scenario4 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario4 = new PracticeScenario("Practice 1: Emphatic listening",
             "Patty: \"Hello\"",
             new PracticeAction[]{
                     new PracticeAction("Say \"You seem upset. What's the matter?\"", "Great choice!", true, null),
@@ -38,7 +38,7 @@ public class PracticeScenarios {
 
             }
     );
-    private final static PracticeScenario scenario5 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario5 = new PracticeScenario("Practice 1: Emphatic listening",
             "Patty: \"Oh, i got into an argument with my sister yesterday and we still haven't talked. We act like we don't know each other!\"",
             new PracticeAction[]{
                     new PracticeAction("Say \"I see. Why though?\"", "Great choice!", true, null),
@@ -46,7 +46,7 @@ public class PracticeScenarios {
 
             }
     );
-    private final static PracticeScenario scenario6 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario6 = new PracticeScenario("Practice 1: Emphatic listening",
             "Patty: \"So, usually, my sister and I take turns doing the chores every day. Yesterday, before my mum went to work, she told us to wash the dishes. On schedule, it was my turn; however, the day before, when it was my sister's turn, i helped her out. Because i did most of the work, i assumed that she would be in charge yesterday.\"",
             new PracticeAction[]{
                     new PracticeAction("Continue to listen", "Moving forwards", true, null),
@@ -54,7 +54,7 @@ public class PracticeScenarios {
 
             }
     );
-    private final static PracticeScenario scenario7 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario7 = new PracticeScenario("Practice 1: Emphatic listening",
             "Patty: \"But she had other ideas - i was the one who had to do the washing. So, I stayed in my room all day, watched movies and i didn't give the housekeeping any further thought. When our mum got home, she was mad at us, because no one had done anything.\"",
             new PracticeAction[]{
                     new PracticeAction("Paraphrase what was said : \"So, basically, both of you thought that the other one would do the washing. And as a result, no one did, right?\"", "Great choice. Summing up makes the other person understand that you are listening", true, null),
@@ -63,7 +63,7 @@ public class PracticeScenarios {
 
             }
     );
-    private final static PracticeScenario scenario8 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario8 = new PracticeScenario("Practice 1: Emphatic listening",
             "Patty: \"Exactly! When our mum yelled at us, my sister and i started pointing fingers at each other, which lead to a heated argument. We haven't talked since. I miss her and that makes me upset. What should i do?\"",
             new PracticeAction[]{
                     new PracticeAction("Say : \"If I were you, i would try to talk to her about it. In my opinion, no one is wrong or right, the situation seems to be a misunderstanding.\"", "Great choice.", true, null),
@@ -72,7 +72,7 @@ public class PracticeScenarios {
 
             }
     );
-    private final static PracticeScenario scenario9 = new PracticeScenario("Practice 1: Empathetic listening",
+    private final static PracticeScenario scenario9 = new PracticeScenario("Practice 1: Emphatic listening",
             "Patty : \" I guess you are right, i may try talking to her. Thank you for listening, I feel much better now. Wanna go to class together?\"",
             new PracticeAction[]{
                     new PracticeAction("Say : \"Sure, let's go.\"", "Great choice.", true, null),
