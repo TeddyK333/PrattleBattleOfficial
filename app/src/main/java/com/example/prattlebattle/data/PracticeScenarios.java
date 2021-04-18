@@ -31,7 +31,7 @@ public class PracticeScenarios {
             }
     );
     private final static PracticeScenario scenario4 = new PracticeScenario("Practice 1: Emphatic listening",
-            "Patty: \"Hello\"", R.drawable.pr3,
+            "Patty: \"Hello\"", R.drawable.pr2,
             new PracticeAction[]{
                     new PracticeAction("Say \"You seem upset. What's the matter?\"", "Great choice!", true, null),
                     new PracticeAction("Act like you haven't noticed and start talking about yourself.", "Patty is your friend. It is worth trying to show empathy. If she doesn't want to share, it is okay, you've at least tried.", false, 1)
@@ -42,7 +42,7 @@ public class PracticeScenarios {
             "Patty: \"Oh, i got into an argument with my sister yesterday and we still haven't talked. We act like we don't know each other!\"", R.drawable.pr3,
             new PracticeAction[]{
                     new PracticeAction("Say \"I see. Why though?\"", "Great choice!", true, null),
-                    new PracticeAction("Change the topic", "Empathetic listening is all about seeking to understand the other individual, not avoiding talking about their concerns.", false, 1),
+                    new PracticeAction("Change the topic", "Emphatic listening is all about seeking to understand the other individual, not avoiding talking about their concerns.", false, 1),
 
             }
     );
