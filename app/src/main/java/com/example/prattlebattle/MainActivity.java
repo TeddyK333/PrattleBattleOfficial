@@ -42,12 +42,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        Intent intent = new Intent(this, QuizActivity.class);
-        startActivity(intent);
-//        if (isFirstTimeUser()) {
-//            Intent intent = new Intent(this, RegistrationActivity.class);
-//            startActivity(intent);
-//        }
+        if (isFirstTimeUser()) {
+            Intent intent = new Intent(this, IntroActivity.class);
+            startActivity(intent);
+        }
     }
 
     private boolean isFirstTimeUser() {

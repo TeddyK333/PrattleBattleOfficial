@@ -107,6 +107,7 @@ public class QuizActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);
+        builder.setTitle(R.string.quizFeedbackTitle);
         builder.setCancelable(false);
 
         builder.setPositiveButton(
