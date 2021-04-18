@@ -26,7 +26,7 @@ public class PracticeScenarios {
     private final static PracticeScenario scenario3 = new PracticeScenario("Practice 1: Empathetic listening",
             "",
             new PracticeAction[]{
-                    new PracticeAction("Say: \"Hi, Patty.\"", "", true, null),
+                    new PracticeAction("Say: \"Hi, Patty.\"", "Moving forwards.", true, null),
 
             }
     );
@@ -49,7 +49,7 @@ public class PracticeScenarios {
     private final static PracticeScenario scenario6 = new PracticeScenario("Practice 1: Empathetic listening",
             "Patty: \"So, usually, my sister and I take turns doing the chores every day. Yesterday, before my mum went to work, she told us to wash the dishes. On schedule, it was my turn; however, the day before, when it was my sister's turn, i helped her out. Because i did most of the work, i assumed that she would be in charge yesterday.\"",
             new PracticeAction[]{
-                    new PracticeAction("Continue to listen", "", true, null),
+                    new PracticeAction("Continue to listen", "Moving forwards", true, null),
 
 
             }
