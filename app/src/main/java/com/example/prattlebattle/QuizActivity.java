@@ -1,5 +1,6 @@
 package com.example.prattlebattle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -19,6 +20,8 @@ import com.example.prattlebattle.model.Question;
 
 import java.util.ArrayList;
 
+import static com.example.prattlebattle.data.PracticeScenarios.practiceScenarios;
+
 public class QuizActivity extends AppCompatActivity {
 
     private ArrayList <Question> quizQuestions = new ArrayList<>();
@@ -29,7 +32,6 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton[] answerViews;
     private Button nextQuestionButton;
     private RadioGroup radioGroupAnswers;
-    private TextView quizScoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,6 @@ public class QuizActivity extends AppCompatActivity {
         radioGroupAnswers =  findViewById(R.id.radio_group_quiz_answers);
         nextQuestionButton = findViewById(R.id.button_quiz_next);
         question = findViewById(R.id.text_view_quiz_question_title);
-        quizScoreTextView = findViewById((R.id.textViewQuizScore));
         answerViews = new RadioButton[]{
                 findViewById(R.id.radio_button_quiz_answer_1),
                 findViewById(R.id.radio_button_quiz_answer_2),
@@ -70,8 +71,7 @@ public class QuizActivity extends AppCompatActivity {
                     editor.putInt("score", totalScore);
                     editor.apply();
 
-                    Intent intent = new Intent(this, RegistrationActivity.class);
-                    startActivity(intent);
+                    displayFeedback();
                 } else {
                     ++currentQuestion;
                     setQuestion();
@@ -79,51 +79,6 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
-
-
-//            if (radioGroupAnswers.getCheckedRadioButtonId() != -1) {
-//                int id = radioGroupAnswers.indexOfChild(radioGroupAnswers.findViewById(radioGroupAnswers.getCheckedRadioButtonId()));
-//                totalScore += quizQuestions.get(currentQuestion).answers[id].score;
-//                radioGroupAnswers.clearCheck();
-//
-//                if (currentQuestion == quizQuestions.size() - 1) {
-//                    SharedPreferences sharedPreferences = getSharedPreferences("main", Context.MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    editor.putInt("score", totalScore);
-//                    editor.apply();
-//                    question.setText("Scores");
-//                    ++currentQuestion;
-//                    radioGroupAnswers.setVisibility(View.GONE);
-//                    quizScoreTextView.setVisibility(View.VISIBLE);
-//                    nextQuestionButton.setText(getResources().getString(R.string.NextButton));
-//                    if(totalScore < 8) {
-//                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan8));
-//                    }else if(totalScore < 15)
-//                    {
-//                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreLessThan15));
-//                    }
-//                    else {
-//                        quizScoreTextView.setText(getResources().getString(R.string.totalScoreMoreThan14));
-//                    }
-//                } else if(currentQuestion == quizQuestions.size())
-//                {
-//                    //TODO fix this --> go to registration after giving quiz score results
-//
-//                    Intent intent = new Intent(this, RegistrationActivity.class);
-//                    startActivity(intent);
-//                }
-//                else {
-//                    ++currentQuestion;
-//                    setQuestion();
-//                }
-//            }
-//        });
-//    }
 
     private void setQuestion() {
         question.setText(quizQuestions.get(currentQuestion).text);
@@ -138,6 +93,36 @@ public class QuizActivity extends AppCompatActivity {
         if (currentQuestion == quizQuestions.size()-1) {
             nextQuestionButton.setText(getResources().getString(R.string.CompleteQuizButton));
         }
+    }
+
+    private void displayFeedback() {
+        String message = "";
+        if(totalScore < 8) {
+            message = getResources().getString(R.string.totalScoreLessThan8);
+        } else if(totalScore < 15) {
+            message = getResources().getString(R.string.totalScoreLessThan15);
+        } else {
+            message = getResources().getString(R.string.totalScoreMoreThan14);
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message);
+        builder.setCancelable(false);
+
+        builder.setPositiveButton(
+                "Ok",
+                (dialog, id) -> {
+                    dialog.cancel();
+                    goToNextActivity();
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private void goToNextActivity() {
+        Intent intent = new Intent(this, RegistrationActivity.class);
+        startActivity(intent);
     }
 
     private void populateQuestions() {
