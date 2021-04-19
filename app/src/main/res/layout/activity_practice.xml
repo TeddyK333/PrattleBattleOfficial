@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1D69D"
+    android:background="#ECC285"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     tools:context=".PracticeActivity">
@@ -15,6 +15,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/black"
+        android:fontFamily="cursive"
         android:text="@string/Title"
         android:textAlignment="center"
         android:textColor="@color/black"

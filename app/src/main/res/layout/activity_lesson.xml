@@ -13,8 +13,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/nextButton"
+        android:fontFamily="cursive"
         android:text="@string/NextButton"
-        android:textColor="@color/nextButtonText"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -25,6 +26,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/black"
+        android:fontFamily="cursive"
         android:text="@string/Title"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -59,6 +61,7 @@
             android:paddingEnd="32dp"
             android:scrollbars="vertical"
             android:text="@string/Content"
+            android:textColor="@color/black"
             android:textSize="15sp" />
     </ScrollView>
 
@@ -69,9 +72,10 @@
         android:layout_marginStart="35dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/mainButtons"
+        android:fontFamily="cursive"
         android:shadowColor="#4C3434"
         android:text="@string/play"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textColorHighlight="#9C27B0"
         app:layout_constraintBottom_toTopOf="@+id/buttonPause"
         app:layout_constraintStart_toStartOf="parent" />
@@ -83,8 +87,9 @@
         android:layout_marginStart="35dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/mainButtons"
+        android:fontFamily="cursive"
         android:text="@string/pause"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttonStop"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -95,8 +100,9 @@
         android:layout_marginStart="35dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/mainButtons"
+        android:fontFamily="cursive"
         android:text="@string/stop"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttonNext"
         app:layout_constraintStart_toStartOf="parent" />
 
