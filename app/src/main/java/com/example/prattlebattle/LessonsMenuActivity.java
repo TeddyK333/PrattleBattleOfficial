@@ -45,11 +45,22 @@ public class LessonsMenuActivity extends AppCompatActivity {
             Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
             intent.putExtra("lessonNumber", 1);
             startActivity(intent);
-
         });
-        less3.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());
-        less4.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());
-        less5.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());
+        less3.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
+            intent.putExtra("lessonNumber", 2);
+            startActivity(intent);
+        });
+        less4.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
+            intent.putExtra("lessonNumber", 3);
+            startActivity(intent);
+        });
+        less5.setOnClickListener(view -> {
+            Intent intent = new Intent(LessonsMenuActivity.this, LessonActivity.class);
+            intent.putExtra("lessonNumber", 4);
+            startActivity(intent);
+        });
         less6.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());
         less7.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());
         less8.setOnClickListener(view -> Toast.makeText(LessonsMenuActivity.this, "To be implemented", Toast.LENGTH_SHORT).show());

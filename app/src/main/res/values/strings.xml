@@ -67,6 +67,6 @@
 <!--    Quiz scores-->
     <string name="quizFeedbackTitle">Great! Here are the results.</string>
     <string name="totalScoreLessThan8">You need to keep working on your communication skills. You are not expressing yourself clearly, and you might even be misinterpreting messages. The good news is that you can develop your communication skills by paying close attention to how you communicate. Join me in this adventure where we can learn together!</string>
-    <string name="totalScoreLessThan15">You\'re a good communicator, but you have communication issues from time to time. Take some time to consider your communication strategy, and pay attention to how well you receive messages as well as how well you deliver them. This will assist you in improving your communication skills. Join me in this adventure where we can learn together!</string>
+    <string name="totalScoreLessThan15">You are a good communicator, but you have communication issues from time to time. Take some time to consider your communication strategy, and pay attention to how well you receive messages as well as how well you deliver them. This will assist you in improving your communication skills. Join me in this adventure where we can learn together!</string>
     <string name="totalScoreMoreThan14">Generally, you are aware of your position as a communicator, both when sending and receiving messages. But there is always room for improvement. Join me in this adventure where we can learn together!</string>
 </resources>
