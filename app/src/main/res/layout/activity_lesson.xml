@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/nextButton"
         android:text="@string/NextButton"
         android:textColor="@color/nextButtonText"
@@ -23,7 +23,7 @@
         android:id="@+id/TextViewLessonTitle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/black"
         android:text="@string/Title"
         android:textAlignment="center"
@@ -43,26 +43,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/TextViewLesson"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
-        android:text="@string/Content"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewLessonTitle" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/gifCharacterImageView"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewLessonTitle"
+        tools:layout_editor_absoluteX="195dp">
+
+        <TextView
+            android:id="@+id/TextViewLesson"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:scrollbars="vertical"
+            android:text="@string/Content"
+            android:textSize="15sp" />
+    </ScrollView>
 
     <Button
         android:id="@+id/buttonPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/mainButtons"
         android:shadowColor="#4C3434"
         android:text="@string/play"
@@ -76,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/mainButtons"
         android:text="@string/pause"
         android:textColor="@color/black"
@@ -88,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/mainButtons"
         android:text="@string/stop"
         android:textColor="@color/black"
